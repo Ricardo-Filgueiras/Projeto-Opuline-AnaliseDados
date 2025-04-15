@@ -27,13 +27,13 @@ table dProdutosFinais
 		annotation SummarizationSetBy = Automatic
 
 	column Preço
-		dataType: decimal
+		dataType: int64
 		formatString: 0
 		lineageTag: 37ea5a11-6026-45cc-93ab-726877864d45
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Preço
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column imagem
 		dataType: string
@@ -68,12 +68,13 @@ table dProdutosFinais
 		annotation SummarizationSetBy = Automatic
 
 	column Cod_marca
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 0ef9653f-411e-4ae3-85d3-49743cb860c6
 		summarizeBy: none
 		sourceColumn: Cod_marca
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column Column10
 		dataType: string
@@ -87,12 +88,11 @@ table dProdutosFinais
 		mode: import
 		source =
 				let
-				    Fonte = Excel.Workbook(File.Contents("C:\Users\Ana\Documents\Documents\Alura\Cursos\PBI-visualizando e analisando\Base_de_dados-Opuline.xlsx"), null, true),
-				    ProdutosFinais_Sheet = Fonte{[Item="ProdutosFinais",Kind="Sheet"]}[Data],
-				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(ProdutosFinais_Sheet, [PromoteAllScalars=true]),
-				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"codigo", Int64.Type}, {"Título", type text}, {"Marca", type text}, {"Preço", Currency.Type}, {"imagem", type text}, {"tamanho", type text}, {"Categoria", type text}, {"Subcategoria", type text}})
+				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/Ricardo-Filgueiras/Projeto-Opuline-AnaliseDados/refs/heads/main/basedados/dados/ProdutosFinais.csv"),[Delimiter=";", Columns=10, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"codigo", Int64.Type}, {"Título", type text}, {"Marca", type text}, {"Preço", Int64.Type}, {"imagem", type text}, {"tamanho", type text}, {"Categoria", type text}, {"Subcategoria", type text}, {"Cod_marca", Int64.Type}, {"Column10", type text}})
 				in
-				    #"Tipo Alterado"
+				    #"Changed Type"
 
 	annotation PBI_ResultType = Table
 

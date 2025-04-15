@@ -26,17 +26,23 @@ table dMarcas
 
 		annotation SummarizationSetBy = Automatic
 
+	column Column4
+		dataType: string
+		lineageTag: 0d9f8126-47f5-4d76-b89f-ee5c2a56a2af
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dMarcas = m
 		mode: import
 		source =
 				let
-				    Fonte = Excel.Workbook(File.Contents("C:\Users\Ana\Documents\Documents\Alura\Cursos\PBI-visualizando e analisando\Base_de_dados-Opuline.xlsx"), null, true),
-				    Marcas_Sheet = Fonte{[Item="Marcas",Kind="Sheet"]}[Data],
-				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Marcas_Sheet, [PromoteAllScalars=true]),
-				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Código_Marca", Int64.Type}, {"Marca", type text}, {"Origem", type text}, {"Column4", Int64.Type}}),
-				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"Column4"})
+				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/Ricardo-Filgueiras/Projeto-Opuline-AnaliseDados/refs/heads/main/basedados/dados/Marcas.csv"),[Delimiter=";", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Código_Marca", Int64.Type}, {"Marca", type text}, {"Origem", type text}})
 				in
-				    #"Colunas Removidas"
+				    #"Changed Type"
 
 	annotation PBI_NavigationStepName = Navegação
 

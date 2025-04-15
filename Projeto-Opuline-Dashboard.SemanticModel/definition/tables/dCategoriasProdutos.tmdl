@@ -32,14 +32,11 @@ table dCategoriasProdutos
 		mode: import
 		source =
 				let
-				    Fonte = Excel.Workbook(File.Contents("C:\Users\Ana\Documents\Documents\Alura\Cursos\PBI-visualizando e analisando\Base_de_dados-Opuline.xlsx"), null, true),
-				    ProdutosFinais_Sheet = Fonte{[Item="ProdutosFinais",Kind="Sheet"]}[Data],
-				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(ProdutosFinais_Sheet, [PromoteAllScalars=true]),
-				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"codigo", Int64.Type}, {"Título", type text}, {"Marca", type text}, {"Preço", Currency.Type}, {"imagem", type text}, {"tamanho", type text}, {"Categoria", type text}, {"Subcategoria", type text}}),
-				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"codigo", "Título", "Marca", "Preço", "imagem", "tamanho", "Cod_marca", "Column10"}),
-				    #"Duplicatas Removidas" = Table.Distinct(#"Colunas Removidas")
+				    Source = dProdutosFinais,
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"codigo", "Título", "Marca", "Preço", "imagem", "tamanho", "Cod_marca", "Column10"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns")
 				in
-				    #"Duplicatas Removidas"
+				    #"Removed Duplicates"
 
 	annotation PBI_NavigationStepName = Navegação
 

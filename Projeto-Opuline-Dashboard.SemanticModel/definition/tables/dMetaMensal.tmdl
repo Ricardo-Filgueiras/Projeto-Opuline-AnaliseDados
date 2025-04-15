@@ -13,10 +13,10 @@ table dMetaMensal
 		dataType: int64
 		formatString: 0
 		lineageTag: 6ea0e324-a664-40d3-b64e-0d70fc4241ed
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Ano
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column Meses
 		dataType: string
@@ -38,13 +38,13 @@ table dMetaMensal
 		annotation UnderlyingDateTimeDataType = Date
 
 	column Meta
-		dataType: double
+		dataType: decimal
 		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 4a642529-b356-4c34-a261-4d9649386f40
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Meta
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
@@ -52,13 +52,12 @@ table dMetaMensal
 		mode: import
 		source =
 				let
-				    Fonte = Excel.Workbook(File.Contents("C:\Users\Ana\Documents\Documents\Alura\Cursos\PBI-visualizando e analisando\Base_de_dados-Opuline.xlsx"), null, true),
-				    MetaMensal_Sheet = Fonte{[Item="MetaMensal",Kind="Sheet"]}[Data],
-				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(MetaMensal_Sheet, [PromoteAllScalars=true]),
-				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Categoria", type text}, {"Ano", Int64.Type}, {"Meses", type text}, {"Data", type date}, {"Meta", type number}, {"Column6", type any}, {"Column7", type any}}),
-				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"Column6", "Column7"})
+				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/Ricardo-Filgueiras/Projeto-Opuline-AnaliseDados/refs/heads/main/basedados/dados/MetaMensal.csv"),[Delimiter=";", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Removed Columns" = Table.RemoveColumns(#"Promoted Headers",{"Column6", "Column7"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{{"Categoria", type text}, {"Ano", Int64.Type}, {"Meses", type text}, {"Data", type date}, {"Meta", Currency.Type}})
 				in
-				    #"Colunas Removidas"
+				    #"Changed Type"
 
 	annotation PBI_NavigationStepName = Navegação
 

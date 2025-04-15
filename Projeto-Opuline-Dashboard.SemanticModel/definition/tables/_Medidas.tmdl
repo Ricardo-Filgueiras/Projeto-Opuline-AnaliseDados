@@ -5,7 +5,7 @@ table _Medidas
 			SUMX(
 			    fPedidos,
 			    fPedidos[quantidade]*RELATED(dProdutosFinais[Preço]))
-		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: d348f32c-68fa-46fb-9d1f-edb9e5d3d93e
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}

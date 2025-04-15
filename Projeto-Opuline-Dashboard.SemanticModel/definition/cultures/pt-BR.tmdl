@@ -2017,19 +2017,7 @@ cultureInfo pt-BR
 			          "ConceptualProperty": "Soma Vendas"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Vendas": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "medidas.soma_metas": {
 			      "Definition": {
@@ -2038,19 +2026,7 @@ cultureInfo pt-BR
 			          "ConceptualProperty": "Soma Metas"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Metas": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    }
 			  },
 			  "Relationships": {
