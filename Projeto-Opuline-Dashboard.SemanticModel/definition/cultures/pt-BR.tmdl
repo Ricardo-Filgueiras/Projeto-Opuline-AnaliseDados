@@ -2027,6 +2027,27 @@ cultureInfo pt-BR
 			        }
 			      },
 			      "State": "Generated"
+			    },
+			    "dmarcas.origem": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dMarcas",
+			          "ConceptualProperty": "Origem"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Origem": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {

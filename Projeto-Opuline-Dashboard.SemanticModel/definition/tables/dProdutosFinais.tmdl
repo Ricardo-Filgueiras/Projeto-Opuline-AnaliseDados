@@ -38,6 +38,7 @@ table dProdutosFinais
 	column imagem
 		dataType: string
 		lineageTag: f6a09998-0a33-46b2-8729-94c10604f132
+		dataCategory: ImageUrl
 		summarizeBy: none
 		sourceColumn: imagem
 

@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
+        "x": 454.22557185184451,
         "y": 0
       },
       "nodes": [
         {
           "location": {
             "x": 1415.0479631533012,
-            "y": 71.141408191943469
+            "y": 71.143524666983581
           },
           "nodeIndex": "_Medidas",
           "nodeLineageTag": "9a685908-f46a-464d-b2bf-5b399488960f",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 1280.6308479741379,
-            "y": 0.0042329500802047448
+            "y": 0.006349425120315999
           },
           "nodeIndex": "Fatores",
           "nodeLineageTag": "3bd9afc2-7d41-42b9-9d84-93a7bdde37c5",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 303.05987919039029,
-            "y": 164.23810577820103
+            "y": 164.24022225324114
           },
           "nodeIndex": "dProdutosFinais",
           "nodeLineageTag": "c84d250c-3e25-4e42-9941-9a5ecdc31d24",
@@ -51,7 +51,7 @@
         {
           "location": {
             "x": 686.13948938134627,
-            "y": 177.14617051757551
+            "y": 177.14828699261562
           },
           "nodeIndex": "fPedidos",
           "nodeLineageTag": "17cd1502-711e-4f48-855a-332a0be16b68",
@@ -65,7 +65,7 @@
         {
           "location": {
             "x": 233.4456663320845,
-            "y": 441.63044248017559
+            "y": 441.6325589552157
           },
           "nodeIndex": "dCategoriasProdutos",
           "nodeLineageTag": "307e8d49-28cf-4751-b6fd-5f4711bcc209",
@@ -78,7 +78,7 @@
         {
           "location": {
             "x": 1054.7790440918459,
-            "y": 467.00084068137744
+            "y": 467.00295715641755
           },
           "nodeIndex": "dMetaMensal",
           "nodeLineageTag": "aedaaba8-02a7-4eb9-ad8b-1caccd2b5cfa",
@@ -91,7 +91,7 @@
         {
           "location": {
             "x": 683.26875086507619,
-            "y": 463.1211693641406
+            "y": 463.12328583918071
           },
           "nodeIndex": "Calendario",
           "nodeLineageTag": "29499471-0aba-4075-b6a4-a5c8b6e36b8b",
@@ -104,7 +104,7 @@
         {
           "location": {
             "x": 2.2423387282811973,
-            "y": 91.357206979530659
+            "y": 91.35932345457077
           },
           "nodeIndex": "dMarcas",
           "nodeLineageTag": "55a6f41d-f2c1-46c6-822e-37d341173da0",
@@ -114,6 +114,19 @@
           },
           "zIndex": 2,
           "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 1696.8056244250201,
+            "y": 257.50042034068872
+          },
+          "nodeIndex": "ComparaçãoCategorias",
+          "nodeLineageTag": "67003cf8-0365-4df7-b434-ac7770cfda41",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas as tabelas",

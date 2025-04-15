@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
   "name": "2c34764295d67802b0f4",
   "position": {
-    "x": 0,
+    "x": 376,
     "y": 297,
-    "z": 1,
+    "z": 1000,
     "height": 423,
-    "width": 994
+    "width": 662
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -32,7 +32,7 @@
               },
               "queryRef": "dCategoriasProdutos.Categoria Hierarquia.Categoria",
               "nativeQueryRef": "Categoria Hierarquia Categoria",
-              "active": true
+              "active": false
             },
             {
               "field": {

@@ -2,13 +2,13 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.2.0/schema.json",
   "themeCollection": {
     "baseTheme": {
-      "name": "CY24SU02",
-      "reportVersionAtImport": "5.53",
+      "name": "CY18SU07",
+      "reportVersionAtImport": "3.15",
       "type": "SharedResources"
     },
     "customTheme": {
-      "name": "AccessibleDefault",
-      "reportVersionAtImport": "5.53",
+      "name": "Electric",
+      "reportVersionAtImport": "5.61",
       "type": "SharedResources"
     }
   },
@@ -33,7 +33,7 @@
           "expanded": {
             "expr": {
               "Literal": {
-                "Value": "false"
+                "Value": "true"
               }
             }
           }
@@ -53,14 +53,30 @@
       "type": "SharedResources",
       "items": [
         {
-          "name": "CY24SU02",
-          "path": "BaseThemes/CY24SU02.json",
+          "name": "CY18SU07",
+          "path": "BaseThemes/CY18SU07.json",
           "type": "BaseTheme"
         },
         {
-          "name": "AccessibleDefault",
-          "path": "BuiltInThemes/AccessibleDefault.json",
+          "name": "Electric",
+          "path": "BuiltInThemes/Electric.json",
           "type": "CustomTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Tela_de_fundo_Vendas6655299332927583.png",
+          "path": "Tela_de_fundo_Vendas6655299332927583.png",
+          "type": "Image"
+        },
+        {
+          "name": "tela_fundo_produtos501206746518162.png",
+          "path": "tela_fundo_produtos501206746518162.png",
+          "type": "Image"
         }
       ]
     }

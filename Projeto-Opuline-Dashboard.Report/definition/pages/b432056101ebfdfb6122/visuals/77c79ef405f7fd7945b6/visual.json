@@ -1,15 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
-  "name": "7e4dd051a2e632ec976c",
+  "name": "77c79ef405f7fd7945b6",
   "position": {
-    "x": 1038,
-    "y": 297,
-    "z": 2000,
-    "height": 423,
-    "width": 242
+    "x": 308.18181818181813,
+    "y": 183.63636363636363,
+    "z": 1000,
+    "height": 471.81818181818176,
+    "width": 416.36363636363632,
+    "tabOrder": 1000
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
         "Category": {
@@ -27,7 +28,24 @@
               },
               "queryRef": "dMarcas.Origem",
               "nativeQueryRef": "Origem",
-              "active": true
+              "active": true,
+              "displayName": "Origem"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ComparaçãoCategorias"
+                    }
+                  },
+                  "Property": "ComparaçãoCategorias"
+                }
+              },
+              "index": 0,
+              "length": 1
             }
           ]
         },
@@ -70,24 +88,6 @@
       }
     },
     "objects": {
-      "general": [
-        {
-          "properties": {}
-        }
-      ],
-      "valueAxis": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
       "labels": [
         {
           "properties": {
@@ -95,13 +95,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1000D"
                 }
               }
             }
