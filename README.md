@@ -15,9 +15,9 @@ Embreve...
 ## Objetivos
 
 * **Analisar Dados Existentes:** Realizar análise exploratória nos dados disponíveis (vendas, clientes, produtos, etc.) para extrair insights iniciais.
-* **Identificar KPIs:** Definir Key Performance Indicators (KPIs) relevantes para o negócio de cosméticos da BelezaViva.
+* **Identificar KPIs:** Definir Key Performance Indicators (KPIs) relevantes para o negócio de cosméticos.
 * **Desenvolver Dashboards/Relatórios:** Criar visualizações e relatórios para monitoramento contínuo dos KPIs e performance.
-* **Fomentar a Cultura Data Driven:** Disponibilizar ferramentas e análises que incentivem o uso de dados por diferentes áreas da BelezaViva.
+* **Fomentar a Cultura Data Driven:** Disponibilizar ferramentas e análises que incentivem o uso de dados por diferentes áreas.
 
 ## Funcionalidades e Análises (Exemplos)
 
