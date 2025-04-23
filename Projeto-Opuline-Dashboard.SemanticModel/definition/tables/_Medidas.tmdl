@@ -20,9 +20,10 @@ table _Medidas
 		formatString: 0
 		lineageTag: a2231ce9-f341-42ff-9bd5-f8a4deb7a37a
 
-	measure Quantidade = SUM(fPedidos[quantidade])
-		formatString: 0
+	measure Quantidade = SUMX( fPedidos, fPedidos[quantidade])
 		lineageTag: 97b56bab-350a-4d4e-8207-6c28d0a38804
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure FaturamentoMédio =
 			AVERAGEX(
@@ -40,6 +41,16 @@ table _Medidas
 		lineageTag: c31e43c8-2065-42c5-b188-958372ac724e
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MetaQuantidade = CALCULATE( SUMX(SUMMARIZE(fPedidos, Calendario[Mês], fPedidos[quantidade]) ,fPedidos[quantidade]), PREVIOUSYEAR(Calendario[Date] ))
+		formatString: 0
+		lineageTag: a48621a9-d893-4e22-8377-8e4c7d86758c
+
+	measure 'percent qtde' = ```
+			DIVIDE( [Quantidade] , [MetaQuantidade],0) 
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 88ba1580-4413-4eec-b04c-91a521fed892
 
 	column Column
 		formatString: 0

@@ -13,7 +13,6 @@ table Fatores
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fatores Campos'
-		isHidden
 		lineageTag: 4b3e726e-2e3a-4e81-99df-7c125535c6a0
 		summarizeBy: none
 		sourceColumn: [Value2]

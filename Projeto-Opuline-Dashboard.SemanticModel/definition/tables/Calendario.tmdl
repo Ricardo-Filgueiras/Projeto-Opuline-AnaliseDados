@@ -66,6 +66,21 @@ table Calendario
 
 		annotation SummarizationSetBy = Automatic
 
+	hierarchy 'Date Hierarquia'
+		lineageTag: 504ee0fc-0d80-45d5-b130-eba1afc12963
+
+		level Date
+			lineageTag: 35910a20-d808-470f-b6a2-3c5315944a00
+			column: Date
+
+		level Ano
+			lineageTag: 35b512ba-4e6d-4698-bccb-b6c2eb1dd8de
+			column: Ano
+
+		level NomeDoMês
+			lineageTag: 882557fb-c7d9-4b30-baa1-c60d1152b2ec
+			column: NomeDoMês
+
 	partition Calendario = calculated
 		mode: import
 		source =

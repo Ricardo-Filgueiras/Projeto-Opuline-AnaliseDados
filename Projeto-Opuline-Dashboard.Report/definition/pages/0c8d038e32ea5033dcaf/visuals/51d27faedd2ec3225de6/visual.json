@@ -1,18 +1,19 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "51d27faedd2ec3225de6",
   "position": {
-    "x": 544.5454545454545,
-    "y": 126.36363636363636,
+    "x": 545.33333333333337,
+    "y": 109.33333333333333,
     "z": 2000,
-    "height": 49.999999999999993,
-    "width": 161.81818181818181
+    "height": 68.666666666666671,
+    "width": 155.33333333333334,
+    "tabOrder": 2000
   },
   "visual": {
-    "visualType": "card",
+    "visualType": "kpi",
     "query": {
       "queryState": {
-        "Values": {
+        "Goal": {
           "projections": [
             {
               "field": {
@@ -27,6 +28,52 @@
               },
               "queryRef": "_Medidas.MetaS2Door",
               "nativeQueryRef": "MetaS2Door"
+            }
+          ]
+        },
+        "Indicator": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fPedidos"
+                        }
+                      },
+                      "Property": "ship_to_door"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "CountNonNull(fPedidos.ship_to_door)",
+              "nativeQueryRef": "Média de ship_to_door"
+            }
+          ]
+        },
+        "TrendLine": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Calendario"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarquia"
+                    }
+                  },
+                  "Level": "Ano"
+                }
+              },
+              "queryRef": "Calendario.Date Hierarquia.Ano",
+              "nativeQueryRef": "Date Hierarquia Ano"
             }
           ]
         }
@@ -51,7 +98,7 @@
       }
     },
     "objects": {
-      "labels": [
+      "indicator": [
         {
           "properties": {
             "fontSize": {
@@ -60,8 +107,14 @@
                   "Value": "18D"
                 }
               }
-            },
-            "color": {
+            }
+          }
+        }
+      ],
+      "goals": [
+        {
+          "properties": {
+            "goalFontColor": {
               "solid": {
                 "color": {
                   "expr": {
@@ -76,7 +129,22 @@
           }
         }
       ],
-      "categoryLabels": [
+      "status": [
+        {
+          "properties": {
+            "direction": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Negative'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
         {
           "properties": {
             "show": {
@@ -88,10 +156,8 @@
             }
           }
         }
-      ]
-    },
-    "visualContainerObjects": {
-      "background": [
+      ],
+      "title": [
         {
           "properties": {
             "show": {

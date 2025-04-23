@@ -1,15 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
-  "name": "7e4dd051a2e632ec976c",
+  "name": "37c04d339aa7959f1c89",
   "position": {
-    "x": 1038,
-    "y": 297,
-    "z": 2000,
-    "height": 423,
-    "width": 242
+    "x": 725,
+    "y": 218.75,
+    "z": 6000,
+    "height": 241.25,
+    "width": 528.75,
+    "tabOrder": 6000
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
         "Category": {
@@ -19,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dMarcas"
+                      "Entity": "fPedidos"
                     }
                   },
-                  "Property": "Origem"
+                  "Property": "Cidade"
                 }
               },
-              "queryRef": "dMarcas.Origem",
-              "nativeQueryRef": "Origem",
+              "queryRef": "fPedidos.Cidade",
+              "nativeQueryRef": "Cidade",
               "active": true
             }
           ]
@@ -41,11 +42,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Faturamento"
+                  "Property": "Quantidade"
                 }
               },
-              "queryRef": "_Medidas.Faturamento",
-              "nativeQueryRef": "Faturamento"
+              "queryRef": "_Medidas.Quantidade",
+              "nativeQueryRef": "Quantidade"
             }
           ]
         }
@@ -60,7 +61,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Faturamento"
+                "Property": "Quantidade"
               }
             },
             "direction": "Descending"
@@ -70,24 +71,6 @@
       }
     },
     "objects": {
-      "general": [
-        {
-          "properties": {}
-        }
-      ],
-      "valueAxis": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
       "labels": [
         {
           "properties": {
@@ -97,11 +80,55 @@
                   "Value": "true"
                 }
               }
-            },
-            "labelDisplayUnits": {
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "gridlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "labelColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.2
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "1000D"
+                  "Value": "false"
                 }
               }
             }
