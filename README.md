@@ -10,7 +10,8 @@ decisão estratégica no setor de beleza e auxiliando na construção de uma cul
 A Opuline busca evoluir de um modelo onde as decisões não são primariamente baseadas em dados para um onde os dados são centrais para a estratégia e operação.
 ## Imagens.
 
-Embreve...
+![2025-04-23_22-12](https://github.com/user-attachments/assets/c5ef6647-bca8-4591-b00f-30d9316c69ac)
+
 
 ## Objetivos
 
@@ -28,8 +29,8 @@ Embreve...
 
 ## Tecnologias Utilizadas
 
-* **Visualização/BI:**  Power BI
-* **Banco de Dados:**  Arquivos CSV/Excel
+* **Visualização/BI:**   [`Power BI`](https://app.powerbi.com/view?r=eyJrIjoiNGE2ODljY2YtNmYzZC00NDhlLWE3NjctZWJhY2ZiZGIxODJjIiwidCI6ImVhNmIyNzRlLTE4MmYtNDc0Yy04YWMwLTQzOWM5ZTE1Yjg3ZSJ9)
+* **Banco de Dados:**  [`Arquivos CSV/Excel`](https://github.com/Ricardo-Filgueiras/Projeto-Opuline-AnaliseDados/tree/main/basedados)
 
 ## Estrutura do Repositório (Sugestão)
 
