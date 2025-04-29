@@ -1,0 +1,155 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "df28924033c09aacd478",
+  "position": {
+    "x": 725.45454545454538,
+    "y": 532.72727272727263,
+    "z": 7000,
+    "height": 166.36363636363635,
+    "width": 528.18181818181813,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dMarcas"
+                    }
+                  },
+                  "Property": "Origem"
+                }
+              },
+              "queryRef": "dMarcas.Origem",
+              "nativeQueryRef": "Origem",
+              "active": true,
+              "displayName": "Origem"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dProdutosFinais"
+                    }
+                  },
+                  "Property": "Categoria"
+                }
+              },
+              "queryRef": "dProdutosFinais.Categoria",
+              "nativeQueryRef": "Categoria",
+              "active": false,
+              "displayName": "Categoria"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dMarcas"
+                    }
+                  },
+                  "Property": "Marca"
+                }
+              },
+              "queryRef": "dMarcas.Marca",
+              "nativeQueryRef": "Marca",
+              "active": false,
+              "displayName": "Marca"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ComparaçãoCategorias"
+                    }
+                  },
+                  "Property": "ComparaçãoCategorias"
+                }
+              },
+              "index": 0,
+              "length": 3
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fPedidos"
+                        }
+                      },
+                      "Property": "Cidade"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(fPedidos.Cidade)",
+              "nativeQueryRef": "Contagem de Cidade"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dMarcas"
+                  }
+                },
+                "Property": "Origem"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dProdutosFinais"
+                  }
+                },
+                "Property": "Categoria"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dMarcas"
+                  }
+                },
+                "Property": "Marca"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -27,6 +27,15 @@ A Opuline busca evoluir de um modelo onde as decisões não são primariamente b
 * Segmentação de Clientes (RFM ou baseado em comportamento).
 * Análise de cesta de compras (Market Basket Analysis).
 
+### Lista de Funcionalidades e contribuições 
+Sugestões são sempre bem vindas.
+
+* **Estilização de dicas de ferramentas**
+* **Pagina Incial**
+* **Menu Suspenso**
+* **Itroduçao de análise ABC**
+
+
 ## Tecnologias Utilizadas
 
 * **Visualização/BI:**   [`Power BI`](https://app.powerbi.com/view?r=eyJrIjoiNGE2ODljY2YtNmYzZC00NDhlLWE3NjctZWJhY2ZiZGIxODJjIiwidCI6ImVhNmIyNzRlLTE4MmYtNDc0Yy04YWMwLTQzOWM5ZTE1Yjg3ZSJ9)

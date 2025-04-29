@@ -1,0 +1,168 @@
+table fPedidos
+	lineageTag: 17cd1502-711e-4f48-855a-332a0be16b68
+
+	column 'Código do pedido'
+		dataType: int64
+		formatString: 0
+		lineageTag: 65416f9a-069f-49be-83b8-5887a048ca23
+		summarizeBy: none
+		sourceColumn: Código do pedido
+
+		annotation SummarizationSetBy = User
+
+	column 'Código do cliente'
+		dataType: int64
+		formatString: 0
+		lineageTag: f00097f4-eb79-43a0-a8c9-7be205917b11
+		summarizeBy: none
+		sourceColumn: Código do cliente
+
+		annotation SummarizationSetBy = User
+
+	column 'Data do pedido'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0ff5003e-2d80-448b-a21d-938a816721ab
+		summarizeBy: none
+		sourceColumn: Data do pedido
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column id_produto
+		dataType: int64
+		formatString: 0
+		lineageTag: f60cea13-73a8-4852-8a3a-ddb921a49cbb
+		summarizeBy: none
+		sourceColumn: id_produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantidade
+		dataType: int64
+		formatString: 0
+		lineageTag: 12f25562-22b5-4193-86eb-14ab27f063c6
+		summarizeBy: none
+		sourceColumn: quantidade
+
+		annotation SummarizationSetBy = User
+
+	column 'desconto (%)'
+		dataType: int64
+		formatString: 0
+		lineageTag: d5e8590f-3d89-4927-aa48-0fe471dfbfa1
+		summarizeBy: none
+		sourceColumn: desconto (%)
+
+		annotation SummarizationSetBy = User
+
+	column Estado
+		dataType: string
+		lineageTag: 4ef4fb33-2878-4eef-b1ed-76005ee17c5f
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cidade
+		dataType: string
+		lineageTag: fd90d331-de80-4324-94c1-4bc0ddcabb82
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: Cidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: string
+		lineageTag: a8249d2b-e5b8-4762-a3b4-a37328a9d42f
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Longitude
+		dataType: string
+		lineageTag: 538f3712-2743-4ccf-a07c-3fbb583e76e1
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column ship_to_door
+		dataType: int64
+		formatString: 0
+		lineageTag: 6dc5021d-e4db-4ad9-9770-dcaaf9bc5ed0
+		summarizeBy: none
+		sourceColumn: ship_to_door
+
+		annotation SummarizationSetBy = User
+
+	column Column16
+		dataType: string
+		lineageTag: aef91bf0-5c47-4a0e-914c-d786e2112633
+		summarizeBy: none
+		sourceColumn: Column16
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column17
+		dataType: string
+		lineageTag: 67cad413-7974-4af2-8b3a-36b684292e29
+		summarizeBy: none
+		sourceColumn: Column17
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column18
+		dataType: int64
+		formatString: 0
+		lineageTag: a9f84fbc-d191-4f46-8ff1-baa1aa446965
+		summarizeBy: none
+		sourceColumn: Column18
+
+		annotation SummarizationSetBy = User
+
+	column Categoria
+		dataType: string
+		lineageTag: fcd7680d-a303-4cbf-8fe4-2445995faed5
+		summarizeBy: none
+		sourceColumn: Categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valor_compra
+		dataType: int64
+		formatString: 0
+		lineageTag: 43f01288-35a9-4270-b9f7-214cd0df7b80
+		summarizeBy: none
+		sourceColumn: Valor_compra
+
+		annotation SummarizationSetBy = User
+
+	partition fPedidos = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/Ricardo-Filgueiras/Projeto-Opuline-AnaliseDados/refs/heads/main/basedados/dados/pedidos%20(2).csv"),[Delimiter=";", Columns=18, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Código do pedido", Int64.Type}, {"Código do cliente", Int64.Type}, {"Data do pedido", type date}, {"id_produto", Int64.Type}, {"quantidade", Int64.Type}, {"desconto (%)", Int64.Type}, {"Estado", type text}, {"Cidade", type text}, {"Latitude", Int64.Type}, {"Longitude", Int64.Type}, {"ship_to_door", Int64.Type}, {"Column16", type text}, {"Column17", type text}, {"Column18", Int64.Type}, {"Categoria", type text}, {"Valor_compra", Int64.Type}, {"Column14", Int64.Type}, {"Column15", Int64.Type}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each true),
+				    #"Removed Errors" = Table.RemoveRowsWithErrors(#"Filtered Rows", {"Valor_compra"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Removed Errors",{"Column14", "Column15"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns",{{"Longitude", type text}, {"Latitude", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

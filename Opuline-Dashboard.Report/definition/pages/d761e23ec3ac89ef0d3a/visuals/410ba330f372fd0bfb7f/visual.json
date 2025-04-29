@@ -1,0 +1,88 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "410ba330f372fd0bfb7f",
+  "position": {
+    "x": 9.375,
+    "y": 77.5,
+    "z": 0,
+    "height": 168.125,
+    "width": 302.5,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "ImageGrid_FC5183B9_926C_45E0_B5F7_0CE9EAF1DA9B",
+    "query": {
+      "queryState": {
+        "ImageURL": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dProdutosFinais"
+                    }
+                  },
+                  "Property": "imagem"
+                }
+              },
+              "queryRef": "dProdutosFinais.imagem",
+              "nativeQueryRef": "imagem"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "settings": [
+        {
+          "properties": {
+            "pRenderType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'CIRCLE'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

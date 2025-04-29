@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Opuline-Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "41aa9826-8415-4cae-aefb-d670d3e23e7d"
+  }
+}
