@@ -82,8 +82,6 @@ table fPedidos
 		summarizeBy: none
 		sourceColumn: Latitude
 
-		changedProperty = DataType
-
 		annotation SummarizationSetBy = Automatic
 
 	column Longitude
